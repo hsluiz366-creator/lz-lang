@@ -1,0 +1,166 @@
+🚀 Manual Oficial Completo da Linguagem lz
+Bem-vindo à documentação oficial da lz, uma linguagem de programação moderna, leve e interpretada, criada por Luiz. Este manual detalha toda a arquitetura sintática, tipos de dados, operadores, estruturas de controlo e o funcionamento obrigatório do motor de execução.
+
+⚙️ O Ponto de Entrada: A Função main
+Para que qualquer ficheiro de código .lz seja executado com sucesso pelo interpretador, é estritamente obrigatório a existência de uma função principal chamada main.
+
+O interpretador procura por esta função para dar início ao programa; se ela não for encontrada, a execução será interrompida com um erro.
+
+Assinatura obrigatória: func main() void
+
+Explicação detalhada:
+
+func: Palavra-chave reservada para a declaração de funções.
+
+main: O identificador exato que o interpretador procura como ponto de partida.
+
+(): Lista de parâmetros (a função main principal não recebe argumentos).
+
+void: O tipo de retorno da função (indicando que não retorna nenhum valor final para o sistema operacional).
+
+Exemplo da estrutura mínima de um programa lz:
+
+Snippet de código
+func main() void {
+    System.console.out("O programa começou aqui!");
+}
+1. Tipos de Dados e Variáveis
+A linguagem lz utiliza tipagem estática na declaração de variáveis. Deves sempre especificar o tipo antes do nome da variável:
+
+Snippet de código
+int idade = 12;
+float altura = 1.65;
+double pi = 3.1415926535;
+short nivel = 5;
+long distancia = 1500000;
+byte statusByte = 1;
+char letra = 'L';
+string nome = "Luiz";
+bool ativo = true;
+any corDesejada = "Azul"; # O tipo 'any' aceita qualquer valor
+Arrays (Vetores)
+Podes declarar e inicializar listas de valores da seguinte forma:
+
+Snippet de código
+int numeros = [10, 20, 30, 40];
+2. Entrada e Saída de Dados (I/O)
+Saída Padrão (System.console.out)
+Imprime valores, variáveis ou resultados de expressões diretamente no terminal:
+
+Snippet de código
+System.console.out("Olá, Mundo!");
+System.console.out(10 + 5);
+Saída Formatada e Interpolação (System.console.outf)
+A linguagem suporta interpolação avançada de strings utilizando a sintaxe !{...}. Podes injetar variáveis, efetuar chamadas a funções nativas (como len()) ou aceder diretamente a posições de arrays dentro da própria string:
+
+Snippet de código
+string meuNome = "Luiz";
+System.console.outf("O meu nome é !{meuNome} e o nome tem !{len(meuNome)} carateres.");
+
+int pontuacoes = [100, 85, 92];
+System.console.outf("A primeira pontuação foi: !{pontuacoes[0]}");
+Entrada de Dados do Utilizador (System.console.in)
+Permite ler valores digitados no terminal. Podes ler múltiplos valores de uma só vez (separados por espaços):
+
+Snippet de código
+int x = 0;
+int y = 0;
+System.console.in(x, y);
+3. Estruturas de Controlo de Fluxo
+Condicionais (if, else if, else)
+Na lz, a estrutura condicional exige obrigatoriamente a palavra-chave then a seguir à condição, antes de abrir o bloco {}:
+
+Snippet de código
+int idade = 12;
+
+if (idade >= 18) then {
+    System.console.out("És maior de idade.");
+} else if (idade >= 12) then {
+    System.console.out("És adolescente.");
+} else {
+    System.console.out("És criança.");
+}
+Ciclo while
+Repete um bloco de código enquanto a condição for verdadeira (também requer o then):
+
+Snippet de código
+int i = 0;
+while (i < 5) then {
+    System.console.out(i);
+    i++;
+}
+Ciclo do-while
+Garante que o bloco de código é executado pelo menos uma vez antes de validar a condição:
+
+Snippet de código
+int x = 0;
+do {
+    System.console.out(x);
+    x++;
+} while (x < 3);
+Ciclo for
+Ideal para repetições controladas por contadores:
+
+Snippet de código
+for (int i = 0; i < 5; i++) then {
+    System.console.out(i);
+}
+Estrutura de Escolha (switch / case)
+Permite avaliar múltiplos caminhos com base no valor de uma expressão:
+
+Snippet de código
+int opcao = 2;
+switch (opcao) {
+    case 1: {
+        System.console.out("Opção 1 selecionada.");
+    }
+    case 2: {
+        System.console.out("Opção 2 selecionada.");
+    }
+    default: {
+        System.console.out("Opção desconhecida.");
+    }
+}
+4. Funções Personalizadas
+Podes criar as tuas próprias funções customizadas, especificando o tipo de retorno e os parâmetros esperados:
+
+Snippet de código
+func calcularAreaRetangulo(int largura, int altura) int {
+    return largura * altura;
+}
+
+func main() void {
+    int resultado = calcularAreaRetangulo(10, 5);
+    System.console.outf("A área total é: !{resultado}");
+}
+5. Tratamento de Exceções (try-catch)
+Para evitar que o programa feche abruptamente devido a erros em tempo de execução (como divisões por zero), podes usar blocos de segurança:
+
+Snippet de código
+func main() void {
+    try {
+        int teste = 10 / 0;
+    } catch (erro) {
+        System.console.outf("Erro capturado com sucesso: !{erro}");
+    }
+}
+6. Operadores Suportados
+Aritméticos: + (soma), - (subtração), * (multiplicação), / (divisão), % (módulo), ** (potenciação), // (divisão inteira/floor).
+
+Atribuição Composta: +=, -=, *=, /=.
+
+Incremento / Decremento: ++, --.
+
+Comparação: ==, !=, <, >, <=, >=.
+
+Lógicos: .and. (E lógico), .or. (OU lógico).
+
+Bitwise (Bits): &, |, <<, >>.
+
+Ternário: condicao ? valorSeVerdadeiro : valorSeFalso.
+
+7. Como Compilar e Executar um Programa lz
+Certifica-te de que tens o interpretador configurado no teu ambiente Node.js. Para executar qualquer ficheiro com código fonte (por exemplo, main.lz), basta correres o comando no teu terminal:
+
+PowerShell
+lz main.lz
