@@ -1,0 +1,15 @@
+{
+  "name": "lz-lang-icon",
+  "displayName": "LZ Lang Icon",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "contributes": {
+    "iconThemes": [{
+      "id": "lz-lang-theme",
+      "label": "LZ Lang Theme",
+      "path": "./icon-theme.json"
+    }]
+  }
+}

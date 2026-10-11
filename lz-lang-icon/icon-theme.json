@@ -1,0 +1,10 @@
+{
+  "iconDefinitions": {
+    "lz-icon": {
+      "iconPath": "./lz-icon.ico"
+    }
+  },
+  "fileExtensions": {
+    "lz": "lz-icon"
+  }
+}
