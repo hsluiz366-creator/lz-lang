@@ -1,0 +1,28 @@
+{
+  "name": "lz-lang",
+  "version": "1.0.0",
+  "description": "Interpretador da linguagem LZ criada por Luiz",
+  "main": "dist/main.js",
+  "bin": "dist/main.js",
+  "pkg": {
+    "assets": [],
+    "targets": [
+      "node18-win-x64"
+    ],
+    "outputPath": "bin"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "lz-lang",
+    "interpreter",
+    "programming-language"
+  ],
+  "author": "Luiz",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "pkg": "^5.8.1"
+  }
+}

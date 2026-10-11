@@ -1,0 +1,44 @@
+#* ========================================================
+   Teste Geral Beta 1.0 - Compilador e Interpretador .lz
+   ======================================================== *#
+
+# Função para calcular o dobro de um número
+func dobrar(int x) int {
+    return x * 2;
+}
+
+# Função principal obrigatória
+func main() void {
+    System.console.out("=== 1. Teste de Variaveis e Arrays ===");
+    int numeros = [10, 20, 30, 40, 50];
+    
+    System.console.outf("Tamanho do array: !{len(numeros)}");
+    System.console.outf("Primeiro elemento: !{numeros[0]}");
+    System.console.outf("Ultimo elemento: !{numeros[4]}");
+
+    System.console.out("\n=== 2. Teste de Funcoes ===");
+    int resultado = dobrar(25);
+    System.console.outf("O dobro de 25 e: !{resultado}");
+
+    System.console.out("\n=== 3. Teste de Switch / Case ===");
+    int opcao = 2;
+    switch (opcao) {
+        case 1:
+            System.console.out("Opcao 1 selecionada.");
+        case 2:
+            System.console.out("Opcao 2 selecionada com sucesso!");
+        default:
+            System.console.out("Opcao desconhecida.");
+    }
+
+    System.console.out("\n=== 4. Teste de Try / Catch ===");
+    try {
+        System.console.out("A executar operacao protegida...");
+        int divisaoPorZero = 50 / 0;
+        System.console.out(divisaoPorZero);
+    } catch (erroMsg) {
+        System.console.outf("Excecao apanhada com seguranca: !{erroMsg}");
+    }
+
+    System.console.out("\nTodos os testes da Beta 1.0 correram com sucesso!");
+}
